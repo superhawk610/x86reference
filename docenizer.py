@@ -387,8 +387,12 @@ def main():
     with open(autocomplete_path, "w") as f:
         autocomplete = {}
         for inst in instructions:
+            autocomplete[inst.name.upper()] = {
+                "_": inst.name,
+                "*": inst.tooltip,
+            }
             for variant in inst.variants:
-                autocomplete[variant] = {
+                autocomplete[variant.upper()] = {
                     "_": inst.name,
                     "*": inst.variant_descriptions.get(variant, inst.tooltip),
                 }
