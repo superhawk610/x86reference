@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import pprint
 import re
 import sys
 import tarfile
@@ -28,10 +29,10 @@ parser.add_argument(
 )
 parser.add_argument(
     "-o",
-    "--outputpath",
+    "--outputdir",
     type=str,
-    help="Final path of the .js file. Default is ./asm-docs.js",
-    default="./asm-docs.js",
+    help="Output directory for the generated JSON files. Default is ./",
+    default="./",
 )
 parser.add_argument(
     "-d",
@@ -51,6 +52,9 @@ INSTRUCTION_RE = re.compile(r"^([A-Z][A-Z0-9]+)\*?(\s+|$)")
 UNPARSEABLE_INSTR_NAMES = ["PSRLW:PSRLD:PSRLQ", "PSLLW:PSLLD:PSLLQ", "MOVBE"]
 # Some files contain instructions which cannot be parsed and which compilers are unlikely to emit
 IGNORED_FILE_NAMES = [
+    "._404",
+    "404",
+    "index",
     # SGX pseudo-instructions
     "EADD",
     "EACCEPT",
@@ -131,14 +135,15 @@ ARCHIVE_NAME = "x86.tbz2"
 
 
 class Instruction(object):
-    def __init__(self, name, names, tooltip, body):
+    def __init__(self, name, variants, variant_descriptions, tooltip, body):
         self.name = name
-        self.names = names
+        self.variants = variants
+        self.variant_descriptions = variant_descriptions
         self.tooltip = tooltip.rstrip(": ,")
         self.body = body
 
     def __str__(self):
-        return f"{self.name} = {self.tooltip}\n{self.body}"
+        return f"Instruction<{self.name}>"
 
 
 def get_url_for_instruction(instr):
@@ -203,36 +208,33 @@ def parse(filename, f):
         print(f"{filename}: Failed to find table")
         return None
     table = read_table(doc.table)
-    names = set()
-
-    def add_all(instrs):
-        for i in instrs:
-            instruction_name = instr_name(i)
-            if instruction_name:
-                names.add(instruction_name)
+    variants = set()
+    variant_descriptions = {}
 
     for inst in table:
-        if "Opcode/Instruction" in inst:
-            add_all(inst["Opcode/Instruction"].split("\n"))
-        elif "OpcodeInstruction" in inst:
-            add_all(inst["OpcodeInstruction"].split("\n"))
-        elif "Opcode Instruction" in inst:
-            add_all(inst["Opcode Instruction"].split("\n"))
-        elif "Opcode*/Instruction" in inst:
-            add_all(inst["Opcode*/Instruction"].split("\n"))
-        elif "Opcode / Instruction" in inst:
-            add_all(inst["Opcode / Instruction"].split("\n"))
-        elif "Instruction" in inst:
-            instruction_name = instr_name(inst["Instruction"])
-            if not instruction_name:
-                print(f"Unable to get instruction from: {inst['Instruction']}")
-            else:
-                names.add(instruction_name)
-        # else, skip the line
-    if not names:
+        for op_key in [
+            "Opcode/Instruction",
+            "OpcodeInstruction",
+            "Opcode Instruction",
+            "Opcode*/Instruction",
+            "Opcode / Instruction",
+            "Instruction",
+        ]:
+            if op_key not in inst:
+                continue
+
+            variant = instr_name(inst[op_key])
+            if not variant:
+                continue
+
+            variants.add(variant)
+            variant_descriptions[variant] = inst.get("Description")
+            break
+
+    if not variants:
         if filename in UNPARSEABLE_INSTR_NAMES:
-            for inst in filename.split(":"):
-                names.add(inst)
+            for name in filename.split(":"):
+                variants.add(name)
         else:
             print(f"{filename}: Failed to read instruction table")
             return None
@@ -244,14 +246,15 @@ def parse(filename, f):
             # this urljoin will only ensure relative urls are prefixed
             # if a url is already absolute it does nothing
             link["href"] = urllib.parse.urljoin(
-                "http://www.felixcloutier.com/x86/", link["href"]
+                "https://www.felixcloutier.com/x86/", link["href"]
             )
             link["target"] = "_blank"
             link["rel"] = "noreferrer noopener"
 
     return Instruction(
         filename,
-        names,
+        variants,
+        variant_descriptions,
         description_paragraphs[0].text.strip(),
         "".join(map(lambda x: str(x), description_paragraphs)).strip(),
     )
@@ -298,7 +301,7 @@ def parse_html(directory):
     instructions = []
     for root, dirs, files in os.walk(directory):
         for file in files:
-            if file.endswith(".html") and file != "index.html":
+            if file.endswith(".html"):
                 with open(os.path.join(root, file), encoding="utf-8") as f2:
                     name = os.path.splitext(file)[0]
                     if name in IGNORED_DUPLICATES or name in IGNORED_FILE_NAMES:
@@ -346,6 +349,7 @@ def patch_instruction(instruction):
 def main():
     args = parser.parse_args()
     print(f"Called with: {args}")
+
     # If we don't have the html folder already...
     if not os.path.isdir(os.path.join(args.inputfolder, "html")):
         # We don't, try with the compressed file
@@ -361,52 +365,47 @@ def main():
         else:
             # We have a file already downloaded
             extract_asm_doc_archive(args.downloadfolder, args.inputfolder)
+
     instructions = parse_html(args.inputfolder)
     instructions.sort(key=lambda b: b.name)
-    self_test(instructions, args.inputfolder)
+
     all_inst = set()
     for inst in instructions:
-        if not all_inst.isdisjoint(inst.names):
+        if not all_inst.isdisjoint(inst.variants):
             print(
-                f"Overlap in instruction names: {inst.names.intersection(all_inst)} for {inst.name}"
+                f"Overlap in instruction variants: {inst.variants.intersection(all_inst)} for {inst.name}"
             )
-        all_inst = all_inst.union(inst.names)
+        all_inst = all_inst.union(inst.variants)
+
     if not self_test(instructions, args.inputfolder):
         print("Tests do not pass. Not writing output file. Aborting.")
         sys.exit(3)
+
     print(f"Writing {len(instructions)} instructions")
-    with open(args.outputpath, "w") as f:
-        f.write(
-            """
-export function getAsmOpcode(opcode) {
-    if (!opcode) return;
-    switch (opcode.toUpperCase()) {
-"""
-        )
+
+    autocomplete_path = os.path.join(args.outputdir, "autocomplete.json")
+    with open(autocomplete_path, "w") as f:
+        autocomplete = {}
         for inst in instructions:
-            for name in inst.names:
-                f.write(f'        case "{name}":\n')
-            f.write(
-                "            return {}".format(
-                    json.dumps(
-                        {
-                            "tooltip": inst.tooltip,
-                            "html": inst.body,
-                            "url": get_url_for_instruction(inst),
-                        },
-                        indent=16,
-                        separators=(",", ": "),
-                        sort_keys=True,
-                    )
-                )[:-1]
-                + "            };\n\n"
-            )
-        f.write(
-            """
-    }
-}
-"""
-        )
+            for variant in inst.variants:
+                autocomplete[variant] = {
+                    "_": inst.name,
+                    "*": inst.variant_descriptions.get(variant, inst.tooltip),
+                }
+        json.dump(autocomplete, f, separators=(",", ":"))
+
+    full_path = os.path.join(args.outputdir, "full.json")
+    with open(full_path, "w") as f:
+        full = {}
+        for inst in instructions:
+            full[inst.name] = {
+                "id": inst.name,
+                "variants": list(inst.variants),
+                "variant_descriptions": inst.variant_descriptions,
+                "text": inst.body,
+                "href": get_url_for_instruction(inst),
+            }
+        json.dump(full, f, sort_keys=True, indent=2)
 
 
 if __name__ == "__main__":
