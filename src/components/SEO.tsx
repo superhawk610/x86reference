@@ -9,7 +9,7 @@ export interface Props {
   title: string;
 }
 
-function SEO({ description = '', lang = 'en', meta = [], title }: Props) {
+const SEO = ({ description = '', lang = 'en', meta = [], title }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -33,43 +33,43 @@ function SEO({ description = '', lang = 'en', meta = [], title }: Props) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: title,
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website',
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: 'twitter:card',
+          content: 'summary',
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          name: 'twitter:creator',
+          content: site.siteMetadata?.author || '',
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: title,
         },
         {
-          name: `twitter:description`,
+          name: 'twitter:description',
           content: metaDescription,
         },
       ].concat(meta)}
     />
   );
-}
+};
 
 export default SEO;
