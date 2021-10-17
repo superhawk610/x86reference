@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { compareTwoStrings } from 'string-similarity';
-import RESULTS from '../../autocomplete.json';
+import { Link } from 'gatsby';
+import _RESULTS from '../../autocomplete.json';
+import './Search.css';
+
+export interface SearchResult {
+  /** ID */ _: string;
+  /** Description */ '*': string;
+}
+
+const RESULTS: Record<string, SearchResult> = _RESULTS;
 
 // scores range from 0 (no similarity) to 1 (identical strings)
 const SCORE_THRESHOLD = 0.5;
@@ -8,8 +17,11 @@ const OPS = Object.keys(RESULTS);
 const MAX_MATCHES = 25;
 
 const Search = () => {
+  // TODO: restore search input when switching pages
   const [input, setInput] = useState('');
   const [results, setResults] = useState<string[]>([]);
+
+  const blur = () => (document.activeElement as HTMLElement | null)?.blur();
 
   useEffect(() => {
     if (!input) {
@@ -30,16 +42,18 @@ const Search = () => {
   }, [input]);
 
   return (
-    <div>
+    <div className="search">
       <input
         type="text"
         value={input}
         onChange={e => setInput(e.target.value)}
       />
-      <ul>
+      <ul className={results.length === 0 ? 'hidden' : ''}>
         {results.map(result => (
           <li key={result}>
-            <strong>{result}</strong>: {RESULTS[result]['*']}
+            <Link to={`/${RESULTS[result]._}`} onClick={blur}>
+              <strong>{result}</strong>: {RESULTS[result]['*']}
+            </Link>
           </li>
         ))}
       </ul>

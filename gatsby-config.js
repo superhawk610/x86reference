@@ -5,5 +5,18 @@ module.exports = {
     author: '@superhawk610',
     siteUrl: 'https://superhawk610.github.io/x86reference',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require('postcss-preset-env')({
+            stage: false,
+            features: { 'nesting-rules': true },
+          }),
+        ],
+      },
+    },
+  ],
 };

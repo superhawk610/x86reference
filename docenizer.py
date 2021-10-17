@@ -67,7 +67,7 @@ parser.add_argument(
 )
 
 # The maximum number of paragraphs from the description to copy.
-MAX_DESC_PARAS = 5
+MAX_DESC_PARAS = 25
 STRIP_PREFIX = re.compile(
     r"^(([0-9a-fA-F]{2}|m64|NP|(REX|E?VEX\.)[.0-9A-Z]*|/[0-9a-z]+|[a-z]+)\b\s*)*"
 )
@@ -370,6 +370,10 @@ def patch_instruction(instruction):
         )
 
 
+def trim_str(str, max_len=255):
+    return (str[:max_len] + "...") if len(str) > max_len else str
+
+
 def main():
     args = parser.parse_args()
     print(f"Called with: {args}")
@@ -412,28 +416,30 @@ def main():
         autocomplete = {}
         for inst in instructions:
             autocomplete[inst.name.upper()] = {
-                "_": inst.name,
+                "_": inst.name.lower(),
                 "*": inst.tooltip,
             }
             for variant in inst.variants:
                 autocomplete[variant.upper()] = {
-                    "_": inst.name,
-                    "*": inst.variant_descriptions.get(variant, inst.tooltip),
+                    "_": inst.name.lower(),
+                    "*": inst.variant_descriptions.get(variant, trim_str(inst.tooltip)),
                 }
         json.dump(autocomplete, f, separators=(",", ":"))
 
     full_path = os.path.join(args.outputdir, "full.json")
     with open(full_path, "w") as f:
-        full = {}
+        full = []
         for inst in instructions:
-            full[inst.name] = {
-                "id": inst.name,
-                "variants": list(inst.variants),
-                "variant_descriptions": inst.variant_descriptions,
-                "text": inst.body,
-                "href": get_url_for_instruction(inst),
-            }
-        json.dump(full, f, sort_keys=True, indent=2)
+            full.append(
+                {
+                    "id": inst.name.lower(),
+                    "variants": list(inst.variants),
+                    "variant_descriptions": inst.variant_descriptions,
+                    "text": inst.body,
+                    "href": get_url_for_instruction(inst),
+                }
+            )
+        json.dump(full, f, indent=2)
 
 
 if __name__ == "__main__":

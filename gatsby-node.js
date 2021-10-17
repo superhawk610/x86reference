@@ -1,7 +1,11 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const OPS = require('./full.json');
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ actions }) => {
+  for (const op of OPS) {
+    actions.createPage({
+      path: op.id,
+      component: require.resolve('./src/templates/op.tsx'),
+      context: { op },
+    });
+  }
+};

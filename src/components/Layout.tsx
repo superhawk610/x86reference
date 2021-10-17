@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './Header';
+import 'normalize.css';
+import './Layout.css';
 
 export interface Props {
   children?: any;
@@ -21,10 +23,14 @@ const Layout = ({ children }: Props) => {
       <Header />
       <div>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer id="footer">
+          <p style={{ marginBottom: '0.35rem' }}>
+            built by <a href="https://github.com/superhawk610">@superhawk610</a>{' '}
+            &middot; powered by <a href="https://www.gatsbyjs.com">Gatsby</a>
+          </p>
+          <p style={{ fontSize: '0.8rem' }}>
+            &copy; {new Date().getFullYear()}, all rights reserved
+          </p>
         </footer>
       </div>
     </>
