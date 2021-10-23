@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/x86reference',
   siteMetadata: {
     title: 'x86reference',
     description: 'Quickly search x86 assembly documentation.',
