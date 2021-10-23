@@ -1,13 +1,20 @@
+:root {
+  --button-text: #333;
+  --button-border: magenta;
+  --button-background: magenta;
+  --button-background-hover: magenta;
+}
+
 .button {
   padding: 4px 12px;
-  background: #0099cc;
+  background: var(--button-background);
   border-radius: 4px;
-  border: 2px solid #333;
+  border: 2px solid var(--button-border);
   cursor: pointer;
-  color: #333;
+  color: var(--button-text);
   text-decoration: none;
 
   &:hover, &:active {
-    background: #0088bb;
+    background: var(--button-background-hover);
   }
 }

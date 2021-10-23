@@ -22,7 +22,7 @@ Once this is done, you can run the local development server with
 $ npm run develop
 ```
 
-You can view the site at [http://localhost:8080](http://localhost:8080).
+You can view the site at [http://localhost:8000](http://localhost:8000).
 
 ## Deploying
 

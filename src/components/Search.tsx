@@ -16,6 +16,7 @@ const SCORE_THRESHOLD = 0.5;
 const OPS = Object.keys(RESULTS);
 const MAX_MATCHES = 25;
 
+// TODO: keyboard controls
 const Search = () => {
   // TODO: restore search input when switching pages
   const [input, setInput] = useState('');
@@ -51,7 +52,11 @@ const Search = () => {
       <ul className={results.length === 0 ? 'hidden' : ''}>
         {results.map(result => (
           <li key={result}>
-            <Link to={`/${RESULTS[result]._}`} onClick={blur}>
+            <Link
+              className="no-underline"
+              to={`/${RESULTS[result]._}`}
+              onClick={blur}
+            >
               <strong>{result}</strong>: {RESULTS[result]['*']}
             </Link>
           </li>

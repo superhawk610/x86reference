@@ -1,0 +1,15 @@
+.op-title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.op-text {
+  margin-top: 1rem;
+  max-width: 800px;
+
+  & > p {
+    margin-bottom: 0.5rem;
+  }
+}

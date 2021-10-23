@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Button from '../components/Button';
+import './op.css';
 
 export interface Props {
   pageContext: {
@@ -19,7 +20,13 @@ const OpTemplate = ({ pageContext: { op } }: Props) => {
   return (
     <Layout>
       <SEO title={op.id} />
-      <h1>{op.id}</h1>
+      <div className="op-title">
+        <h1>{op.id}</h1>
+
+        <Button href={op.href} target="_blank" rel="noreferrer noopener">
+          Full Documentation
+        </Button>
+      </div>
 
       <ul>
         {op.variants.map(variant => (
@@ -27,10 +34,10 @@ const OpTemplate = ({ pageContext: { op } }: Props) => {
         ))}
       </ul>
 
-      <article dangerouslySetInnerHTML={{ __html: op.text }} />
-      <Button href={op.href} target="_blank" rel="noreferrer noopener">
-        Full Documentation
-      </Button>
+      <article
+        className="op-text"
+        dangerouslySetInnerHTML={{ __html: op.text }}
+      />
     </Layout>
   );
 };
