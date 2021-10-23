@@ -28,12 +28,14 @@ const OpTemplate = ({ pageContext: { op } }: Props) => {
         </Button>
       </div>
 
+      <h2>Variants</h2>
       <ul>
         {op.variants.map(variant => (
           <li key={variant}>{variant}</li>
         ))}
       </ul>
 
+      <h2>Documentation</h2>
       <article
         className="op-text"
         dangerouslySetInnerHTML={{ __html: op.text }}

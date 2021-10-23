@@ -7,12 +7,16 @@
 
 .button {
   padding: 4px 12px;
-  background: var(--button-background);
-  border-radius: 4px;
-  border: 2px solid var(--button-border);
+
   cursor: pointer;
-  color: var(--button-text);
   text-decoration: none;
+
+  background: var(--button-background);
+  color: var(--button-text);
+  border: 2px solid var(--button-border);
+  border-radius: 4px;
+
+  font-weight: 700;
 
   &:hover, &:active {
     background: var(--button-background-hover);

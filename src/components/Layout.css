@@ -1,4 +1,5 @@
 :root {
+  --font-size: 16px;
   --sidebar-width: 340px;
   --sidebar-padding: 1rem;
   --sidebar-background: #eee;
@@ -28,6 +29,12 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 p {
   margin: 0;
 }
@@ -41,6 +48,7 @@ ul {
 #root {
   width: 100vw;
   height: 100vh;
+  font-size: var(--font-size);
 }
 
 #sidebar {
