@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/fxch",
+    "result": {"pageContext":{"op":{"id":"fxch","variants":["FXCH"],"variant_descriptions":{"FXCH":"Exchange the contents of ST(0) and ST(1)."},"text":"<p>Exchanges the contents of registers ST(0) and ST(i). If no source operand is specified, the contents of ST(0) and ST(1) are exchanged.</p><p>This instruction provides a simple means of moving values in the FPU register stack to the top of the stack [ST(0)], so that they can be operated on by those floating-point instructions that can only operate on values in ST(0). For example, the following instruction sequence takes the square root of the third register from the top of the register stack:</p>","href":"https://www.felixcloutier.com/x86/FXCH.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

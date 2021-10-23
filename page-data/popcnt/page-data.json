@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/popcnt",
+    "result": {"pageContext":{"op":{"id":"popcnt","variants":["POPCNT"],"variant_descriptions":{"POPCNT":"POPCNT on r/m64"},"text":"<p>This instruction calculates the number of bits set to 1 in the second operand (source) and returns the count in the first operand (a destination register).</p>","href":"https://www.felixcloutier.com/x86/POPCNT.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

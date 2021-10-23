@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/fxam",
+    "result": {"pageContext":{"op":{"id":"fxam","variants":["FXAM"],"variant_descriptions":{"FXAM":"Classify value or number in ST(0)."},"text":"<p>Examines the contents of the ST(0) register and sets the condition code flags C0, C2, and C3 in the FPU status word to indicate the class of value or number in the register (see the table below).</p><p>The C1 flag is set to the sign of the value in ST(0), regardless of whether the register is empty or full.</p><p>This instruction’s operation is the same in non-64-bit modes and 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/FXAM.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

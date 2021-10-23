@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/lzcnt",
+    "result": {"pageContext":{"op":{"id":"lzcnt","variants":["LZCNT"],"variant_descriptions":{"LZCNT":null},"text":"<p>Counts the number of leading most significant zero bits in a source operand (second operand) returning the result into a destination (first operand).</p><p>LZCNT differs from BSR. For example, LZCNT will produce the operand size when the input operand is zero. It should be noted that on processors that do not support LZCNT, the instruction byte encoding is executed as BSR.</p><p>In 64-bit mode 64-bit operand size requires REX.W=1.</p>","href":"https://www.felixcloutier.com/x86/LZCNT.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/vzeroall",
+    "result": {"pageContext":{"op":{"id":"vzeroall","variants":["VZEROALL"],"variant_descriptions":{"VZEROALL":"Zero all YMM registers."},"text":"<p>The instruction zeros contents of all XMM or YMM registers.</p><p>Note: VEX.vvvv is reserved and must be 1111b, otherwise instructions will #UD. In Compatibility and legacy 32-bit mode only the lower 8 registers are modified.</p>","href":"https://www.felixcloutier.com/x86/VZEROALL.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

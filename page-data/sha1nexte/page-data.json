@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/sha1nexte",
+    "result": {"pageContext":{"op":{"id":"sha1nexte","variants":["SHA1NEXTE"],"variant_descriptions":{"SHA1NEXTE":"Calculates SHA1 state variable E after four rounds of operation from the current SHA1 state variable A in xmm1. The calculated value of the SHA1 state variable E is added to the scheduled dwords in xmm2/m128, and stored with some of the scheduled dwords in xmm1."},"text":"<p>The SHA1NEXTE calculates the SHA1 state variable E after four rounds of operation from the current SHA1 state variable A in the destination operand. The calculated value of the SHA1 state variable E is added to the source operand, which contains the scheduled dwords.</p>","href":"https://www.felixcloutier.com/x86/SHA1NEXTE.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

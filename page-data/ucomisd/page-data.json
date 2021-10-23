@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/ucomisd",
+    "result": {"pageContext":{"op":{"id":"ucomisd","variants":["VUCOMISD","UCOMISD"],"variant_descriptions":{"UCOMISD":"Compare low double-precision floating-point values in xmm1 and xmm2/mem64 and set the EFLAGS flags accordingly.","VUCOMISD":"Compare low double-precision floating-point values in xmm1 and xmm2/m64 and set the EFLAGS flags accordingly."},"text":"<p>Performs an unordered compare of the double-precision floating-point values in the low quadwords of operand 1 (first operand) and operand 2 (second operand), and sets the ZF, PF, and CF flags in the EFLAGS register according to the result (unordered, greater than, less than, or equal). The OF, SF and AF flags in the EFLAGS register are set to 0. The unordered result is returned if either source operand is a NaN (QNaN or SNaN).</p><p>Operand 1 is an XMM register; operand 2 can be an XMM register or a 64 bit memory</p>","href":"https://www.felixcloutier.com/x86/UCOMISD.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/kandnw:kandnb:kandnq:kandnd",
+    "result": {"pageContext":{"op":{"id":"kandnw:kandnb:kandnq:kandnd","variants":["KANDNW","KANDND","KANDNB","KANDNQ"],"variant_descriptions":{"KANDNW":"Bitwise AND NOT 16 bits masks k2 and k3 and place result in k1.","KANDNB":"Bitwise AND NOT 8 bits masks k1 and k2 and place result in k1.","KANDNQ":"Bitwise AND NOT 64 bits masks k2 and k3 and place result in k1.","KANDND":"Bitwise AND NOT 32 bits masks k2 and k3 and place result in k1."},"text":"<p>Performs a bitwise AND NOT between the vector mask k2 and the vector mask k3, and writes the result into vector mask k1.</p>","href":"https://www.felixcloutier.com/x86/KANDNW%3AKANDNB%3AKANDNQ%3AKANDND.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

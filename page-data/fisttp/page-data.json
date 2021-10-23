@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/fisttp",
+    "result": {"pageContext":{"op":{"id":"fisttp","variants":["FISTTP"],"variant_descriptions":{"FISTTP":"Store ST(0) in m64int with truncation."},"text":"<p>FISTTP converts the value in ST into a signed integer using truncation (chop) as rounding mode, transfers the result to the destination, and pop ST. FISTTP accepts word, short integer, and long integer destinations.</p><p>The following table shows the results obtained when storing various classes of numbers in integer format.</p><p>This instruction’s operation is the same in non-64-bit modes and 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/FISTTP.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

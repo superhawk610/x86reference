@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/fsqrt",
+    "result": {"pageContext":{"op":{"id":"fsqrt","variants":["FSQRT"],"variant_descriptions":{"FSQRT":"Computes square root of ST(0) and stores the result in ST(0)."},"text":"<p>Computes the square root of the source value in the ST(0) register and stores the result in ST(0).</p><p>The following table shows the results obtained when taking the square root of various classes of numbers, assuming that neither overflow nor underflow occurs.</p><p>This instruction’s operation is the same in non-64-bit modes and 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/FSQRT.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

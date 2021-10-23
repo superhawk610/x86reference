@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/fild",
+    "result": {"pageContext":{"op":{"id":"fild","variants":["FILD"],"variant_descriptions":{"FILD":"Push m64int onto the FPU register stack."},"text":"<p>Converts the signed-integer source operand into double extended-precision floating-point format and pushes the value onto the FPU register stack. The source operand can be a word, doubleword, or quadword integer. It is loaded without rounding errors. The sign of the source operand is preserved.</p><p>This instruction’s operation is the same in non-64-bit modes and 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/FILD.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

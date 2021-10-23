@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/cvtpi2pd",
+    "result": {"pageContext":{"op":{"id":"cvtpi2pd","variants":["CVTPI2PD"],"variant_descriptions":{"CVTPI2PD":"Convert two packed signed doubleword integers from mm/mem64 to two packed double-precision floating-point values in xmm."},"text":"<p>Converts two packed signed doubleword integers in the source operand (second operand) to two packed double-precision floating-point values in the destination operand (first operand).</p><p>The source operand can be an MMX technology register or a 64-bit memory location. The destination operand is an XMM register. In addition, depending on the operand configuration:</p><p>In 64-bit mode, use of the REX.R prefix permits this instruction to access additional registers (XMM8-XMM15).</p>","href":"https://www.felixcloutier.com/x86/CVTPI2PD.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

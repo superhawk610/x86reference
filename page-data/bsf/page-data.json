@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/bsf",
+    "result": {"pageContext":{"op":{"id":"bsf","variants":["BSF"],"variant_descriptions":{"BSF":"Bit scan forward on r/m64."},"text":"<p>Searches the source operand (second operand) for the least significant set bit (1 bit). If a least significant 1 bit is found, its bit index is stored in the destination operand (first operand). The source operand can be a register or a memory location; the destination operand is a register. The bit index is an unsigned offset from bit 0 of the source operand. If the content of the source operand is 0, the content of the destination operand is undefined.</p><p>In 64-bit mode, the instruction’s default operation size is 32 bits. Using a REX prefix in the form of REX.R permits access to additional registers (R8-R15). Using a REX prefix in the form of REX.W promotes operation to 64 bits. See the summary chart at the beginning of this section for encoding data and limits.</p>","href":"https://www.felixcloutier.com/x86/BSF.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

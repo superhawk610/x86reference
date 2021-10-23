@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/tzcnt",
+    "result": {"pageContext":{"op":{"id":"tzcnt","variants":["TZCNT"],"variant_descriptions":{"TZCNT":"Count the number of trailing zero bits in r/m64, return result in r64."},"text":"<p>TZCNT counts the number of trailing least significant zero bits in source operand (second operand) and returns the result in destination operand (first operand). TZCNT is an extension of the BSF instruction. The key difference between TZCNT and BSF instruction is that TZCNT provides operand size as output when source operand is zero while in the case of BSF instruction, if source operand is zero, the content of destination operand are undefined. On processors that do not support TZCNT, the instruction byte encoding is executed as BSF.</p>","href":"https://www.felixcloutier.com/x86/TZCNT.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

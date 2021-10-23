@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/std",
+    "result": {"pageContext":{"op":{"id":"std","variants":["STD"],"variant_descriptions":{"STD":"Set DF flag."},"text":"<p>Sets the DF flag in the EFLAGS register. When the DF flag is set to 1, string operations decrement the index registers (ESI and/or EDI). Operation is the same in all modes.</p>","href":"https://www.felixcloutier.com/x86/STD.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/bndmov",
+    "result": {"pageContext":{"op":{"id":"bndmov","variants":["BNDMOV"],"variant_descriptions":{"BNDMOV":"Move lower and upper bound from bnd2 to bound register bnd1/m128."},"text":"<p>BNDMOV moves a pair of lower and upper bound values from the source operand (the second operand) to the destination (the first operand). Each operation is 128-bit move. The exceptions are same as the MOV instruction. The memory format for loading/store bounds in 64-bit mode is shown in <a href=\"https://www.felixcloutier.com/x86/BNDMOV.html#fig-3-5\" rel=\"noreferrer noopener\" target=\"_blank\">Figure 3-5</a>.</p><p>This instruction does not change flags.</p>","href":"https://www.felixcloutier.com/x86/BNDMOV.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-op-tsx",
+    "path": "/sha1rnds4",
+    "result": {"pageContext":{"op":{"id":"sha1rnds4","variants":["SHA1RNDS4"],"variant_descriptions":{"SHA1RNDS4":"Performs four rounds of SHA1 operation operating on SHA1 state (A,B,C,D) from xmm1, with a pre-computed sum of the next 4 round message dwords and state variable E from xmm2/m128. The immediate byte controls logic functions and round constants."},"text":"<p>The SHA1RNDS4 instruction performs four rounds of SHA1 operation using an initial SHA1 state (A,B,C,D) from the first operand (which is a source operand and the destination operand) and some pre-computed sum of the next 4 round message dwords, and state variable E from the second operand (a source operand). The updated SHA1 state (A,B,C,D) after four rounds of processing is stored in the destination operand.</p>","href":"https://www.felixcloutier.com/x86/SHA1RNDS4.html"}}},
+    "staticQueryHashes": ["3832154866","63159454"]}
