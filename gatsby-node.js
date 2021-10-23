@@ -1,4 +1,4 @@
-const OPS = require('./full.json');
+const OPS = require('./generated/full.json');
 
 exports.createPages = async ({ actions }) => {
   for (const op of OPS) {

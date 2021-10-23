@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { compareTwoStrings } from 'string-similarity';
 import { Link } from 'gatsby';
-import _RESULTS from '../../autocomplete.json';
+import _RESULTS from '../../generated/autocomplete.json';
 import './Search.css';
 
 export interface SearchResult {

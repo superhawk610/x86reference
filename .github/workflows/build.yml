@@ -1,0 +1,29 @@
+name: Build site
+
+on:
+  pull_request:
+    branches: [ main ]
+
+  # allow manual runs
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - run: pip install beautifulsoup4
+      - name: Cache x86doc input files
+        uses: actions/cache@v2.1.6
+        with:
+          path: generated
+          key: asm-docs-cache-${{ hashFiles('bin/docenizer.py') }}
+      - run: bin/docenizer.py
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npm run build

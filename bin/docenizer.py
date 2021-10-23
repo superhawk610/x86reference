@@ -48,22 +48,22 @@ parser.add_argument(
     "-i",
     "--inputfolder",
     type=str,
-    help="Folder where the input files reside as .html. Default is ./asm-docs/",
-    default="asm-docs",
+    help="Folder where the input files reside as .html. Default is ./generated/asm-docs",
+    default="generated/asm-docs",
 )
 parser.add_argument(
     "-o",
     "--outputdir",
     type=str,
-    help="Output directory for the generated JSON files. Default is ./",
-    default="./",
+    help="Output directory for the generated JSON files. Default is ./generated",
+    default="generated",
 )
 parser.add_argument(
     "-d",
     "--downloadfolder",
     type=str,
-    help="Folder where the archive will be downloaded and extracted",
-    default="asm-docs",
+    help="Folder where the archive will be downloaded and extracted. Default is ./generated/asm-docs",
+    default="generated/asm-docs",
 )
 
 # The maximum number of paragraphs from the description to copy.
