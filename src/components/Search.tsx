@@ -47,6 +47,7 @@ const Search = () => {
       <input
         type="text"
         value={input}
+        placeholder="Search..."
         onChange={e => setInput(e.target.value)}
       />
       <ul className={results.length === 0 ? 'hidden' : ''}>

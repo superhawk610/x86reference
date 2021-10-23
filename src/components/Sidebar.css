@@ -1,0 +1,44 @@
+#sidebar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  width: var(--sidebar-width);
+  padding: var(--sidebar-padding);
+
+  background: var(--sidebar-background);
+
+  & > section:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+
+  & > section:last-child {
+    margin-top: auto;
+  }
+}
+
+#site-title {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.25rem;
+}
+
+#site-description {
+  font-size: 0.9rem;
+
+  & > p {
+    color: #555;
+    margin-top: 0.2rem;
+  }
+}
+
+#footer {
+  text-align: center;
+  font-size: 0.85rem;
+
+  & > .copyright {
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+}

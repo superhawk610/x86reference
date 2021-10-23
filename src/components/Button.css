@@ -1,24 +1,34 @@
 :root {
   --button-text: #333;
-  --button-border: magenta;
-  --button-background: magenta;
-  --button-background-hover: magenta;
+  --button-background: #49ffa2;
+  --button-background-hover: #62ffaf;
 }
 
 .button {
-  padding: 4px 12px;
+  padding: 5px 12px 4px 12px;
 
   cursor: pointer;
   text-decoration: none;
+  font-weight: 700;
 
   background: var(--button-background);
   color: var(--button-text);
-  border: 2px solid var(--button-border);
+  border: 0;
   border-radius: 4px;
 
-  font-weight: 700;
+  transform: scale(1);
+  transition: all 50ms ease-out;
 
   &:hover, &:active {
     background: var(--button-background-hover);
+    box-shadow: var(--floating-shadow);
+    transform: scale(1.03);
+  }
+
+  & svg {
+    vertical-align: top;
+    margin-left: 0.5rem;
+    width: 16px;
+    stroke: currentColor;
   }
 }

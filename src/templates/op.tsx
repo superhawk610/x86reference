@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Button from '../components/Button';
+import ExternalLink from '../assets/up-right-from-square-solid.svg';
 import './op.css';
 
 export interface Props {
@@ -25,21 +26,23 @@ const OpTemplate = ({ pageContext: { op } }: Props) => {
 
         <Button href={op.href} target="_blank" rel="noreferrer noopener">
           Full Documentation
+          <ExternalLink />
         </Button>
       </div>
 
-      <h2>Variants</h2>
-      <ul>
-        {op.variants.map(variant => (
-          <li key={variant}>{variant}</li>
-        ))}
-      </ul>
+      <section className="op-variants">
+        <h2>Variants</h2>
+        <ul>
+          {op.variants.map(variant => (
+            <li key={variant}>{variant}</li>
+          ))}
+        </ul>
+      </section>
 
-      <h2>Documentation</h2>
-      <article
-        className="op-text"
-        dangerouslySetInnerHTML={{ __html: op.text }}
-      />
+      <section className="op-documentation">
+        <h2>Documentation</h2>
+        <article dangerouslySetInnerHTML={{ __html: op.text }} />
+      </section>
     </Layout>
   );
 };

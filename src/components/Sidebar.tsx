@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Search from './Search';
+import './Sidebar.css';
 
 const Sidebar = () => {
   const {
@@ -27,7 +28,9 @@ const Sidebar = () => {
           <p>{meta.description}</p>
           <p>
             powered by{' '}
-            <a href="https://github.com/zneak/x86doc">zneak/x86doc</a>
+            <a href="https://github.com/zneak/x86doc" target="_blank">
+              zneak/x86doc
+            </a>
           </p>
         </div>
       </section>
@@ -44,8 +47,12 @@ const Sidebar = () => {
       <section>
         <footer id="footer">
           <p>
-            <a href="https://github.com/superhawk610">{meta.author}</a> &middot;
-            ⚡ <a href="https://www.gatsbyjs.com">gatsby</a>
+            created by{' '}
+            <a href="https://github.com/superhawk610" target="_blank">
+              {meta.author}
+            </a>{' '}
+            &middot;{' '}
+            <a href="https://github.com/superhawk610/x86reference">repo</a>
           </p>
           <p className="copyright">
             &copy; {new Date().getFullYear()}, all rights reserved
