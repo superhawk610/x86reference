@@ -11,10 +11,10 @@ concise metadata using a modified version of `docenizer.py` (taken from
 First, build the documentation data files.
 
 ```plain
-$ ./docenizer.py
+$ ./bin/docenizer.py
 ```
 
-This should generate both `autocomplete.json` and `full.json`.
+This should generate both `autocomplete.json` and `full.json` under the `generated` directory.
 
 Once this is done, you can run the local development server with
 
