@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Button from '../components/Button';
+import Footer from '../components/Footer';
 import ExternalLink from '../assets/up-right-from-square-solid.svg';
 import './op.css';
 
@@ -42,6 +43,10 @@ const OpTemplate = ({ pageContext: { op } }: Props) => {
       <section className="op-documentation">
         <h2>Documentation</h2>
         <article dangerouslySetInnerHTML={{ __html: op.text }} />
+      </section>
+
+      <section className="hidden-desktop" style={{ marginTop: '3rem' }}>
+        <Footer />
       </section>
     </Layout>
   );

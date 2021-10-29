@@ -52,3 +52,14 @@
     opacity: 0.5;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    width: 100vw;
+  }
+}

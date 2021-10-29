@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Search from './Search';
+import Footer from './Footer';
 import logo from '../assets/logo.png';
 import './Sidebar.css';
 
@@ -8,11 +9,10 @@ const Sidebar = () => {
   const {
     site: { siteMetadata: meta },
   } = useStaticQuery(graphql`
-    query {
+    query SidebarMeta {
       site {
         siteMetadata {
           title
-          author
           description
         }
       }
@@ -39,27 +39,8 @@ const Sidebar = () => {
       <section>
         <Search />
       </section>
-      <section>
-        <ul>
-          <li>
-            <a href="#"></a>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <footer id="footer">
-          <p>
-            created by{' '}
-            <a href="https://github.com/superhawk610" target="_blank">
-              {meta.author}
-            </a>{' '}
-            &middot;{' '}
-            <a href="https://github.com/superhawk610/x86reference">repo</a>
-          </p>
-          <p className="copyright">
-            &copy; {new Date().getFullYear()}, all rights reserved
-          </p>
-        </footer>
+      <section className="hidden-mobile">
+        <Footer />
       </section>
     </nav>
   );

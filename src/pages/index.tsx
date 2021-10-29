@@ -8,6 +8,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <img
       src={searchPrompt}
+      className="hidden-mobile"
       style={{
         width: '250px',
         margin: '8rem 0 0 calc(-1 * var(--body-padding))',
