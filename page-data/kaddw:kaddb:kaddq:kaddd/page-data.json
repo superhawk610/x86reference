@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/kaddw:kaddb:kaddq:kaddd",
-    "result": {"pageContext":{"op":{"id":"kaddw:kaddb:kaddq:kaddd","variants":["KADDB","KADDW","KADDQ","KADDD"],"variant_descriptions":{"KADDW":"Add 16 bits masks in k2 and k3 and place result in k1.","KADDB":"Add 8 bits masks in k2 and k3 and place result in k1.","KADDQ":"Add 64 bits masks in k2 and k3 and place result in k1.","KADDD":"Add 32 bits masks in k2 and k3 and place result in k1."},"text":"<p>Adds the vector mask k2 and the vector mask k3, and writes the result into vector mask k1.</p>","href":"https://www.felixcloutier.com/x86/KADDW%3AKADDB%3AKADDQ%3AKADDD.html"}}},
+    "result": {"pageContext":{"op":{"id":"kaddw:kaddb:kaddq:kaddd","variants":["KADDD","KADDB","KADDQ","KADDW"],"variant_descriptions":{"KADDW":"Add 16 bits masks in k2 and k3 and place result in k1.","KADDB":"Add 8 bits masks in k2 and k3 and place result in k1.","KADDQ":"Add 64 bits masks in k2 and k3 and place result in k1.","KADDD":"Add 32 bits masks in k2 and k3 and place result in k1."},"text":"<p>Adds the vector mask k2 and the vector mask k3, and writes the result into vector mask k1.</p>","href":"https://www.felixcloutier.com/x86/KADDW%3AKADDB%3AKADDQ%3AKADDD.html"}}},
     "staticQueryHashes": ["2451724630","3830446752","63159454"]}
