@@ -42,17 +42,6 @@
   }
 }
 
-#footer {
-  text-align: center;
-  font-size: 0.85rem;
-
-  & > .copyright {
-    margin-top: 0.35rem;
-    font-size: 0.75rem;
-    opacity: 0.5;
-  }
-}
-
 @media screen and (max-width: 768px) {
   #sidebar {
     position: relative;
