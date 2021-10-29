@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Search from './Search';
+import logo from '../assets/logo.png';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -23,6 +24,7 @@ const Sidebar = () => {
       <section>
         <div id="site-title">
           <Link to="/">{meta.title}</Link>
+          <img src={logo} />
         </div>
         <div id="site-description">
           <p>{meta.description}</p>
