@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/test",
     "result": {"pageContext":{"op":{"id":"test","variants":["TEST"],"variant_descriptions":{"TEST":"AND r64 with r/m64; set SF, ZF, PF according to result."},"text":"<p>Computes the bit-wise logical AND of first operand (source 1 operand) and the second operand (source 2 operand) and sets the SF, ZF, and PF status flags according to the result. The result is then discarded.</p><p>In 64-bit mode, using a REX prefix in the form of REX.R permits access to additional registers (R8-R15). Using a REX prefix in the form of REX.W promotes operation to 64 bits. See the summary chart at the beginning of this section for encoding data and limits.</p>","href":"https://www.felixcloutier.com/x86/TEST.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

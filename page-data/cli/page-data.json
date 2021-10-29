@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/cli",
     "result": {"pageContext":{"op":{"id":"cli","variants":["CLI"],"variant_descriptions":{"CLI":"Clear interrupt flag; interrupts disabled when interrupt flag cleared."},"text":"<p>In most cases, CLI clears the IF flag in the EFLAGS register and no other flags are affected. Clearing the IF flag causes the processor to ignore maskable external interrupts. The IF flag and the CLI and STI instruction have no effect on the generation of exceptions and NMI interrupts.</p><p>Operation is different in two modes defined as follows:</p><p>If IOPL &lt; 3 and either VME mode or PVI mode is active, CLI clears the VIF flag in the EFLAGS register, leaving IF unaffected.</p><p><a href=\"https://www.felixcloutier.com/x86/CLI.html#tbl-3-7\" rel=\"noreferrer noopener\" target=\"_blank\">Table 3-7</a> indicates the action of the CLI instruction depending on the processor operating mode, IOPL, and CPL.</p>","href":"https://www.felixcloutier.com/x86/CLI.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

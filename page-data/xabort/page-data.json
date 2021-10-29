@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/xabort",
     "result": {"pageContext":{"op":{"id":"xabort","variants":["XABORT"],"variant_descriptions":{"XABORT":"Causes an RTM abort if in RTM execution"},"text":"<p>XABORT forces an RTM abort. Following an RTM abort, the logical processor resumes execution at the fallback address computed through the outermost XBEGIN instruction. The EAX register is updated to reflect an XABORT instruction caused the abort, and the imm8 argument will be provided in bits 31:24 of EAX.</p>","href":"https://www.felixcloutier.com/x86/XABORT.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

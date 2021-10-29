@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/wrfsbase:wrgsbase",
     "result": {"pageContext":{"op":{"id":"wrfsbase:wrgsbase","variants":["WRFSBASE","WRGSBASE"],"variant_descriptions":{"WRFSBASE":"Load the FS base address with the 64-bit value in the source register.","WRGSBASE":"Load the GS base address with the 64-bit value in the source register."},"text":"<p>Loads the FS or GS segment base address with the general-purpose register indicated by the modR/M:r/m field.</p><p>The source operand may be either a 32-bit or a 64-bit general-purpose register. The REX.W prefix indicates the operand size is 64 bits. If no REX.W prefix is used, the operand size is 32 bits; the upper 32 bits of the source register are ignored and upper 32 bits of the base address (for FS or GS) are cleared.</p><p>This instruction is supported only in 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/WRFSBASE%3AWRGSBASE.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

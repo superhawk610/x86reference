@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/sha256msg2",
     "result": {"pageContext":{"op":{"id":"sha256msg2","variants":["SHA256MSG2"],"variant_descriptions":{"SHA256MSG2":"Performs the final calculation for the next four SHA256 message dwords using previous message dwords from xmm1 and xmm2/m128, storing the result in xmm1."},"text":"<p>The SHA256MSG2 instruction is one of two SHA2 message scheduling instructions. The instruction performs the final calculation for the next four SHA256 message dwords.</p>","href":"https://www.felixcloutier.com/x86/SHA256MSG2.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

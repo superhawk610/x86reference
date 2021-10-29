@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/f2xm1",
     "result": {"pageContext":{"op":{"id":"f2xm1","variants":["F2XM1"],"variant_descriptions":{"F2XM1":"Replace ST(0) with (2ST(0) – 1)."},"text":"<p>Computes the exponential value of 2 to the power of the source operand minus 1. The source operand is located in register ST(0) and the result is also stored in ST(0). The value of the source operand must lie in the range –1.0 to +1.0. If the source value is outside this range, the result is undefined.</p><p>The following table shows the results obtained when computing the exponential value of various classes of numbers, assuming that neither overflow nor underflow occurs.</p><p>Values other than 2 can be exponentiated using the following formula:</p>","href":"https://www.felixcloutier.com/x86/F2XM1.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

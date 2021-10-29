@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/clc",
     "result": {"pageContext":{"op":{"id":"clc","variants":["CLC"],"variant_descriptions":{"CLC":"Clear CF flag."},"text":"<p>Clears the CF flag in the EFLAGS register. Operation is the same in all modes.</p>","href":"https://www.felixcloutier.com/x86/CLC.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

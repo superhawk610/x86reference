@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/fdecstp",
     "result": {"pageContext":{"op":{"id":"fdecstp","variants":["FDECSTP"],"variant_descriptions":{"FDECSTP":"Decrement TOP field in FPU status word."},"text":"<p>Subtracts one from the TOP field of the FPU status word (decrements the top-of-stack pointer). If the TOP field contains a 0, it is set to 7. The effect of this instruction is to rotate the stack by one position. The contents of the FPU data registers and tag register are not affected.</p><p>This instruction’s operation is the same in non-64-bit modes and 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/FDECSTP.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

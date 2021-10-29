@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/wrpkru",
     "result": {"pageContext":{"op":{"id":"wrpkru","variants":["WRPKRU"],"variant_descriptions":{"WRPKRU":"Writes EAX into PKRU."},"text":"<p>Writes the value of EAX into PKRU. ECX and EDX must be 0 when WRPKRU is executed; otherwise, a general-protection exception (#GP) occurs.</p><p>WRPKRU can be executed only if CR4.PKE = 1; otherwise, an invalid-opcode exception (#UD) occurs. Software can discover the value of CR4.PKE by examining CPUID.(EAX=07H,ECX=0H):ECX.OSPKE [bit 4].</p><p>On processors that support the Intel 64 Architecture, the high-order 32-bits of RCX, RDX and RAX are ignored.</p>","href":"https://www.felixcloutier.com/x86/WRPKRU.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

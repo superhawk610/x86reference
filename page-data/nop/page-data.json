@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/nop",
     "result": {"pageContext":{"op":{"id":"nop","variants":["NOP"],"variant_descriptions":{"NOP":"Multi-byte no-operation instruction."},"text":"<p>This instruction performs no operation. It is a one-byte or multi-byte NOP that takes up space in the instruction stream but does not impact machine context, except for the EIP register.</p><p>The multi-byte form of NOP is available on processors with model encoding:</p><p>The multi-byte NOP instruction does not alter the content of a register and will not issue a memory operation. The instruction’s operation is the same in non-64-bit modes and 64-bit mode.</p>","href":"https://www.felixcloutier.com/x86/NOP.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

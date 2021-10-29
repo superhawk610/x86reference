@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/xend",
     "result": {"pageContext":{"op":{"id":"xend","variants":["XEND"],"variant_descriptions":{"XEND":"Specifies the end of an RTM code region."},"text":"<p>The instruction marks the end of an RTM code region. If this corresponds to the outermost scope (that is, including this XEND instruction, the number of XBEGIN instructions is the same as number of XEND instructions), the logical processor will attempt to commit the logical processor state atomically. If the commit fails, the logical processor will rollback all architectural register and memory updates performed during the RTM execution. The logical processor will resume execution at the fallback address computed from the outermost XBEGIN instruction. The EAX register is updated to reflect RTM abort information.</p><p>XEND executed outside a transactional region will cause a #GP (General Protection Fault).</p>","href":"https://www.felixcloutier.com/x86/XEND.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/xtest",
     "result": {"pageContext":{"op":{"id":"xtest","variants":["XTEST"],"variant_descriptions":{"XTEST":"Test if executing in a transactional region"},"text":"<p>The XTEST instruction queries the transactional execution status. If the instruction executes inside a transactionally executing RTM region or a transactionally executing HLE region, then the ZF flag is cleared, else it is set.</p>","href":"https://www.felixcloutier.com/x86/XTEST.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

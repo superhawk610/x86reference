@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/cld",
     "result": {"pageContext":{"op":{"id":"cld","variants":["CLD"],"variant_descriptions":{"CLD":"Clear DF flag."},"text":"<p>Clears the DF flag in the EFLAGS register. When the DF flag is set to 0, string operations increment the index registers (ESI and/or EDI). Operation is the same in all modes.</p>","href":"https://www.felixcloutier.com/x86/CLD.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

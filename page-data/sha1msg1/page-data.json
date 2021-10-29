@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/sha1msg1",
     "result": {"pageContext":{"op":{"id":"sha1msg1","variants":["SHA1MSG1"],"variant_descriptions":{"SHA1MSG1":"Performs an intermediate calculation for the next four SHA1 message dwords using previous message dwords from xmm1 and xmm2/m128, storing the result in xmm1."},"text":"<p>The SHA1MSG1 instruction is one of two SHA1 message scheduling instructions. The instruction performs an intermediate calculation for the next four SHA1 message dwords.</p>","href":"https://www.felixcloutier.com/x86/SHA1MSG1.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}

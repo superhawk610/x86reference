@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-op-tsx",
     "path": "/andn",
     "result": {"pageContext":{"op":{"id":"andn","variants":["ANDN"],"variant_descriptions":{"ANDN":"Bitwise AND of inverted r32b with r/m32, store result in r32a."},"text":"<p>Performs a bitwise logical AND of inverted second operand (the first source operand) with the third operand (the</p><p>second source operand). The result is stored in the first operand (destination operand).</p><p>This instruction is not supported in real mode and virtual-8086 mode. The operand size is always 32 bits if not in 64-bit mode. In 64-bit mode operand size 64 requires VEX.W1. VEX.W1 is ignored in non-64-bit modes. An attempt to execute this instruction with VEX.L not equal to 0 will cause #UD.</p>","href":"https://www.felixcloutier.com/x86/ANDN.html"}}},
-    "staticQueryHashes": ["3832154866","63159454"]}
+    "staticQueryHashes": ["2451724630","3830446752","63159454"]}
