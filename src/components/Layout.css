@@ -68,3 +68,20 @@ ul {
   height: 100%;
   overflow-y: auto;
 }
+
+@media screen and (min-width: 769px) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+
+  #main {
+    padding-left: var(--body-padding);
+    height: auto;
+  }
+}

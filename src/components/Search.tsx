@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Downshift from 'downshift';
 import { compareTwoStrings } from 'string-similarity';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import _RESULTS from '../../generated/autocomplete.json';
 import './Search.css';
 
@@ -16,55 +17,53 @@ const SCORE_THRESHOLD = 0.5;
 const OPS = Object.keys(RESULTS);
 const MAX_MATCHES = 25;
 
-// TODO: keyboard controls
-const Search = () => {
-  // TODO: restore search input when switching pages
-  const [input, setInput] = useState('');
-  const [results, setResults] = useState<string[]>([]);
+function filterResults(input: string | null): string[] {
+  if (!input) return [];
 
-  const blur = () => (document.activeElement as HTMLElement | null)?.blur();
+  const _input = input.toUpperCase();
+  const _results: Array<[number, string]> = [];
 
-  useEffect(() => {
-    if (!input) {
-      setResults([]);
-      return;
-    }
+  for (const op of OPS) {
+    const score = compareTwoStrings(_input, op);
+    if (score >= SCORE_THRESHOLD) _results.push([score, op]);
+  }
 
-    const _input = input.toUpperCase();
-    const _results: Array<[number, string]> = [];
+  _results.sort((a, b) => b[0] - a[0]);
+  return _results.map(x => x[1]).slice(0, MAX_MATCHES);
+}
 
-    for (const op of OPS) {
-      const score = compareTwoStrings(_input, op);
-      if (score >= SCORE_THRESHOLD) _results.push([score, op]);
-    }
-
-    _results.sort((a, b) => b[0] - a[0]);
-    setResults(_results.map(x => x[1]).slice(0, MAX_MATCHES));
-  }, [input]);
-
-  return (
-    <div className="search">
-      <input
-        type="text"
-        value={input}
-        placeholder="Search..."
-        onChange={e => setInput(e.target.value)}
-      />
-      <ul className={results.length === 0 ? 'hidden' : ''}>
-        {results.map(result => (
-          <li key={result}>
-            <Link
-              className="no-underline"
-              to={`/${RESULTS[result]._}`}
-              onClick={blur}
-            >
-              <strong>{result}</strong>: {RESULTS[result]['*']}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+const Search = () => (
+  <Downshift onChange={op => navigate(`/${RESULTS[op]._}`)}>
+    {({
+      getInputProps,
+      getItemProps,
+      getMenuProps,
+      isOpen,
+      inputValue,
+      highlightedIndex,
+      getRootProps,
+    }) => (
+      <div className="search">
+        <div {...getRootProps({} as any, { suppressRefError: true })}>
+          <input {...getInputProps({ placeholder: 'Search...' })} />
+        </div>
+        <ul {...getMenuProps({ className: isOpen ? '' : 'hidden' })}>
+          {isOpen
+            ? filterResults(inputValue).map((result, index) => (
+                <li
+                  className={highlightedIndex === index ? 'hover' : ''}
+                  {...getItemProps({ key: result, item: result, index })}
+                >
+                  <Link className="no-underline" to={`/${RESULTS[result]._}`}>
+                    <strong>{result}</strong>: {RESULTS[result]['*']}
+                  </Link>
+                </li>
+              ))
+            : null}
+        </ul>
+      </div>
+    )}
+  </Downshift>
+);
 
 export default Search;

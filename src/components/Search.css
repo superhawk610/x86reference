@@ -22,6 +22,7 @@
 
   & ul {
     position: absolute;
+    z-index: 1000;
     left: 0;
     top: calc(100% + 2px);
     width: 550px;
@@ -32,25 +33,34 @@
     border-radius: 4px;
     box-shadow: var(--floating-shadow);
 
-    & > li > a {
-      color: black;
-      display: block;
-      padding: 0.5rem;
-      text-decoration: none;
-
-      &:hover {
-        color: white;
-        background: var(--link-color);
-      }
-    }
-
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 250ms ease-out;
-  }
-
-  &:focus-within ul:not(.hidden) {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity 250ms ease-out;
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    & > li {
+      & > a {
+        color: black;
+        display: block;
+        padding: 0.5rem;
+        text-decoration: none;
+      }
+
+      &.hover > a, & > a:hover {
+          color: white;
+          background: var(--link-color);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search ul {
+    width: 100%;
+    max-height: 10000px;
   }
 }
