@@ -82,5 +82,6 @@ ul {
 
   #main {
     padding-left: var(--body-padding);
+    height: auto;
   }
 }

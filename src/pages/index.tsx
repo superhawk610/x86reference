@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 import searchPrompt from '../assets/search_prompt.png';
 
 const IndexPage = () => (
@@ -14,6 +15,9 @@ const IndexPage = () => (
         margin: '8rem 0 0 calc(-1 * var(--body-padding))',
       }}
     />
+    <section className="hidden-desktop">
+      <Footer />
+    </section>
   </Layout>
 );
 
